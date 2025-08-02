@@ -1,0 +1,60 @@
+{
+  "name": "md-table-editor",
+  "displayName": "Markdown Table Editor",
+  "description": "Edit markdown tables in an Excel-like editor",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:mdTableEditor.editTable",
+    "onCommand:mdTableEditor.createTable"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mdTableEditor.editTable",
+        "title": "Markdown Table: Edit"
+      },
+      {
+        "command": "mdTableEditor.createTable",
+        "title": "Markdown Table: Create"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceExtname == '.md'",
+          "command": "mdTableEditor.editTable",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceExtname == '.md'",
+          "command": "mdTableEditor.createTable",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "build": "node esbuild.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.3",
+    "@vscode/test-electron": "^2.2.0",
+    "esbuild": "^0.16.17"
+  }
+}
