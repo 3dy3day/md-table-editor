@@ -177,73 +177,155 @@ class TableEditorProvider {
             font-family: var(--vscode-font-family);
             color: var(--vscode-foreground);
             background-color: var(--vscode-editor-background);
-            padding: 20px;
+            padding: 12px;
             margin: 0;
         }
         
         .toolbar {
-            margin-bottom: 20px;
             display: flex;
-            flex-direction: column;
-            gap: 0;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 16px;
+            margin-bottom: 16px;
+        }
+        
+        .toolbar-left {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .toolbar-right {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        
+        .divider {
+            width: 1px;
+            height: 20px;
+            background-color: #3e3e42;
+            margin: 0 4px;
         }
         
         button {
-            background-color: var(--vscode-button-background);
-            color: var(--vscode-button-foreground);
             border: none;
-            padding: 6px 14px;
             cursor: pointer;
-            border-radius: 2px;
-            font-size: 13px;
-        }
-        
-        button:hover {
-            background-color: var(--vscode-button-hoverBackground);
+            font-size: 12px;
+            font-weight: 400;
+            transition: all 0.1s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            height: 28px;
+            padding: 4px 12px;
+            border-radius: 4px;
         }
         
         button:active {
             transform: translateY(1px);
         }
         
-        button.save {
-            background-color: #53D769;
-            color: white;
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
         
-        button.save:hover {
-            background-color: #42c558;
+        /* Primary button style */
+        button.primary {
+            background-color: #0969da;
+            color: #FFFFFF;
         }
         
-        button.discard {
-            background-color: #FC3D39;
-            color: white;
+        button.primary:hover:not(:disabled) {
+            background-color: #0860ca;
         }
         
-        button.discard:hover {
-            background-color: #e02622;
+        /* Ghost button style */
+        button.ghost {
+            background-color: transparent;
+            color: #CCCCCC;
+            border: 1px solid #3a3d41;
         }
         
-        button:not(.save):not(.discard) {
-            background-color: #F8F8F8;
-            color: #000000;
+        button.ghost:hover:not(:disabled) {
+            background-color: #3a3d41;
+            border-color: #45494e;
         }
         
-        button:not(.save):not(.discard):hover {
-            background-color: #E8E8E8;
+        /* Ghost icon button with text */
+        button.ghost-icon {
+            background-color: transparent;
+            color: #CCCCCC;
+            border: 1px solid #3a3d41;
+            padding: 4px 10px;
+            height: 28px;
         }
         
-        .toolbar-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
+        button.ghost-icon:hover:not(:disabled) {
+            background-color: #3a3d41;
+            border-color: #45494e;
+        }
+        
+        /* Icon-only button style */
+        button.icon-only {
+            background-color: transparent;
+            color: #CCCCCC;
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            border-radius: 3px;
+            position: relative;
+        }
+        
+        button.icon-only:hover:not(:disabled) {
+            background-color: #2a2d2e;
+        }
+        
+        /* Compact icon button */
+        button.compact {
+            background-color: transparent;
+            color: #CCCCCC;
+            padding: 4px 8px;
+            height: 28px;
+        }
+        
+        button.compact:hover:not(:disabled) {
+            background-color: #2a2d2e;
+        }
+        
+        .icon {
+            font-size: 14px;
+            line-height: 1;
+        }
+        
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 4px;
+            padding: 4px 8px;
+            background-color: #1e1e1e;
+            color: #CCCCCC;
+            font-size: 12px;
+            border-radius: 3px;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            border: 1px solid #454545;
+            z-index: 1000;
+        }
+        
+        button:hover .tooltip {
+            opacity: 1;
         }
         
         .table-container {
             overflow: auto;
-            border: 1px solid var(--vscode-widget-border);
-            border-radius: 3px;
-            background-color: var(--vscode-editor-background);
+            padding: 0 16px;
         }
         
         table {
@@ -253,23 +335,37 @@ class TableEditorProvider {
         }
         
         th, td {
-            border: 1px solid var(--vscode-widget-border);
-            padding: 8px;
+            border: 1px solid #3a3a3a;
+            padding: 8px 12px;
             text-align: left;
             position: relative;
             overflow: visible;
         }
         
         th {
-            background-color: var(--vscode-editor-selectionBackground);
+            background-color: #2b5797;
+            color: #FFFFFF;
             font-weight: bold;
             position: sticky;
             top: 0;
             z-index: 10;
+            padding: 10px 16px;
+            text-align: left;
         }
         
         td {
-            background-color: var(--vscode-editor-background);
+            background-color: transparent;
+            padding: 10px 16px;
+        }
+        
+        /* Alternating row colors */
+        tr:nth-child(even) td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+        
+        /* Row hover */
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.04);
         }
         
         td:focus-within,
@@ -337,24 +433,64 @@ class TableEditorProvider {
             display: block;
         }
         
-        .help-text {
-            margin-top: 20px;
-            font-size: 12px;
-            color: var(--vscode-descriptionForeground);
+        .status-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px 16px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .status-info {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .shortcuts {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .vertical-divider {
+            width: 1px;
+            height: 20px;
+            background-color: #3e3e42;
+            margin: 0 8px;
         }
     </style>
 </head>
 <body>
     <div class="toolbar">
-        <div class="toolbar-row">
-            <button class="save" onclick="saveTable()">Save</button>
-            <button class="discard" onclick="resetTable()">Discard</button>
+        <div class="toolbar-left">
+            <button class="primary" onclick="saveTable()">
+                <span class="icon">💾</span>
+                Save
+            </button>
+            <button class="ghost" onclick="resetTable()">Cancel</button>
         </div>
-        <div class="toolbar-row">
-            <button onclick="undo()">Undo</button>
-            <button onclick="redo()">Redo</button>
-            <button onclick="addRow(-1)">Add Row</button>
-            <button onclick="addColumn(-1)">Add Column</button>
+        
+        <div class="toolbar-right">
+            <button class="icon-only" onclick="undo()" id="undoButton">
+                <span class="icon">↶</span>
+                <span class="tooltip">Undo (Ctrl+Z)</span>
+            </button>
+            <button class="icon-only" onclick="redo()" id="redoButton">
+                <span class="icon">↷</span>
+                <span class="tooltip">Redo (Ctrl+Y)</span>
+            </button>
+            
+            <div class="vertical-divider"></div>
+            
+            <button class="ghost-icon" onclick="addRow(-1)">
+                <span class="icon">+</span>
+                Add Row
+            </button>
+            <button class="ghost-icon" onclick="addColumn(-1)">
+                <span class="icon">+</span>
+                Add Column
+            </button>
         </div>
     </div>
     
@@ -364,9 +500,13 @@ class TableEditorProvider {
     
     <div id="status" class="status"></div>
     
-    <div class="help-text">
-        💡 Tips: Click any cell to edit. Use Tab/Shift+Tab to navigate. Right-click for adding/deleting rows and columns.
-        <br>Shortcuts: Ctrl+S to save, Ctrl+Z to undo, Ctrl+Y to redo
+    <div class="status-bar">
+        <div class="status-info">
+            <span id="tableSize">2×2 table</span>
+        </div>
+        <div class="shortcuts">
+            Tab: navigate • Enter: edit • Ctrl+S: save
+        </div>
     </div>
     
     <div id="contextMenu" class="context-menu">
@@ -386,6 +526,27 @@ class TableEditorProvider {
         let redoStack = [];
         let contextRow = -1;
         let contextCol = -1;
+        
+        function updateUndoRedoButtons() {
+            const undoButton = document.getElementById('undoButton');
+            const redoButton = document.getElementById('redoButton');
+            
+            if (undoButton) {
+                undoButton.disabled = undoStack.length === 0;
+            }
+            if (redoButton) {
+                redoButton.disabled = redoStack.length === 0;
+            }
+        }
+        
+        function updateTableSize() {
+            const rows = tableData.length;
+            const cols = tableData[0]?.length || 0;
+            const tableSizeElement = document.getElementById('tableSize');
+            if (tableSizeElement) {
+                tableSizeElement.textContent = \`\${rows}×\${cols} table\`;
+            }
+        }
         
         function renderTable() {
             const table = document.getElementById('markdownTable');
@@ -409,6 +570,7 @@ class TableEditorProvider {
                         saveToUndoStack();
                         tableData[rowIndex][colIndex] = e.target.value;
                         redoStack = [];
+                        updateUndoRedoButtons();
                     });
                     
                     input.addEventListener('keydown', (e) => {
@@ -450,6 +612,8 @@ class TableEditorProvider {
                 
                 table.appendChild(tr);
             });
+            
+            updateTableSize();
         }
         
         function navigateCell(row, col, forward) {
@@ -480,6 +644,7 @@ class TableEditorProvider {
                 redoStack.push(JSON.parse(JSON.stringify(tableData)));
                 tableData = undoStack.pop();
                 renderTable();
+                updateUndoRedoButtons();
                 showStatus('Undo successful', 'success');
             }
         }
@@ -489,6 +654,7 @@ class TableEditorProvider {
                 undoStack.push(JSON.parse(JSON.stringify(tableData)));
                 tableData = redoStack.pop();
                 renderTable();
+                updateUndoRedoButtons();
                 showStatus('Redo successful', 'success');
             }
         }
@@ -690,6 +856,7 @@ class TableEditorProvider {
         
         // Initial render
         renderTable();
+        updateUndoRedoButtons();
         
         // Focus first cell
         document.querySelector('input[data-row="0"][data-col="0"]')?.focus();
