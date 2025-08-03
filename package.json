@@ -2,7 +2,7 @@
   "name": "visual-markdown-table-editor",
   "displayName": "Visual Markdown Table Editor",
   "description": "Edit markdown tables in a visual Excel-like interface with live preview, keyboard navigation, and undo/redo support",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "3dy3day",
   "engines": {
     "vscode": "^1.74.0"

@@ -8,9 +8,7 @@ This is a sample markdown file to test the Markdown Table Editor extension.
 | --- | --- | --- |
 | John Doe | 50 | New York |
 | Jane Smith | 25 | Los Angeles |
-| Bob Johnson | 35 | Chicago | aa | aa |
-
-
+| Bob Johnson | 35 | Chicago |
 
 ## Complex Table
 

@@ -120,9 +120,13 @@ class TableEditorProvider {
     }
     async updateTable(editor, tableInfo, newData) {
         const newMarkdown = markdownTableParser_1.MarkdownTableParser.dataToMarkdown(newData);
-        await editor.edit(editBuilder => {
+        const editSuccess = await editor.edit(editBuilder => {
             editBuilder.replace(tableInfo.range, newMarkdown);
         });
+        // Save the document if the edit was successful
+        if (editSuccess) {
+            await editor.document.save();
+        }
         // Update the webview with success message
         if (this.panel) {
             this.panel.webview.postMessage({ command: 'updateSuccess' });

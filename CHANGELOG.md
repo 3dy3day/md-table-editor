@@ -1,6 +1,11 @@
 # Change Log
 
-All notable changes to the "Markdown Table Editor" extension will be documented in this file.
+All notable changes to the "Visual Markdown Table Editor" extension will be documented in this file.
+
+## [1.0.1] - 2025-01-08
+
+### Bug Fixes
+- 🐛 Fixed: Markdown file now automatically saves to disk when clicking Save in the table editor (no more manual save required)
 
 ## [1.0.0] - 2025-01-08
 

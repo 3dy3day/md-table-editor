@@ -111,9 +111,14 @@ export class TableEditorProvider {
     
     private async updateTable(editor: vscode.TextEditor, tableInfo: TableInfo, newData: string[][]) {
         const newMarkdown = MarkdownTableParser.dataToMarkdown(newData);
-        await editor.edit(editBuilder => {
+        const editSuccess = await editor.edit(editBuilder => {
             editBuilder.replace(tableInfo.range, newMarkdown);
         });
+        
+        // Save the document if the edit was successful
+        if (editSuccess) {
+            await editor.document.save();
+        }
         
         // Update the webview with success message
         if (this.panel) {
