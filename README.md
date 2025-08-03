@@ -37,6 +37,9 @@ A powerful VS Code extension that brings Excel-like table editing capabilities t
 ## Usage
 
 ### Creating a New Table
+
+![Create Table Demo](images/createtable.gif)
+
 1. Open any Markdown file (`.md`)
 2. Right-click where you want to insert a table
 3. Select **"Markdown Table: Create"**
@@ -44,6 +47,9 @@ A powerful VS Code extension that brings Excel-like table editing capabilities t
 5. Edit the content and click **Save**
 
 ### Editing an Existing Table
+
+![Edit Table Demo](images/edittable.gif)
+
 1. Open a Markdown file containing a table
 2. Right-click anywhere inside the table
 3. Select **"Markdown Table: Edit"**
@@ -106,7 +112,7 @@ Initial release with:
 
 ## Contributing
 
-Found a bug or have a feature request? Please create an issue on our [GitHub repository](https://github.com/yourusername/md-table-editor).
+Found a bug or have a feature request? Please create an issue on our [GitHub repository](https://github.com/3dy3day/md-table-editor).
 
 ## License
 

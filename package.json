@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/md-table-editor"
+    "url": "https://github.com/3dy3day/md-table-editor"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/md-table-editor/issues"
+    "url": "https://github.com/3dy3day/md-table-editor/issues"
   },
-  "homepage": "https://github.com/yourusername/md-table-editor#readme",
+  "homepage": "https://github.com/3dy3day/md-table-editor#readme",
   "license": "MIT",
   "activationEvents": [
     "onCommand:mdTableEditor.editTable",

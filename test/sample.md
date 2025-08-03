@@ -6,9 +6,11 @@ This is a sample markdown file to test the Markdown Table Editor extension.
 
 | Name | Age | City |
 | --- | --- | --- |
-| John Doe | 30 | New York |
+| John Doe | 50 | New York |
 | Jane Smith | 25 | Los Angeles |
-| Bob Johnson | 35 | Chicago |
+| Bob Johnson | 35 | Chicago | aa | aa |
+
+
 
 ## Complex Table
 
