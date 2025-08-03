@@ -1,31 +1,76 @@
 # Markdown Table Editor
 
-A Visual Studio Code extension that provides an Excel-like editor for markdown tables.
+A powerful VS Code extension that brings Excel-like table editing capabilities to Markdown files. Edit your markdown tables in a visual, intuitive interface instead of wrestling with pipes and dashes.
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![VS Code](https://img.shields.io/badge/VS%20Code-^1.74.0-green)
+![License](https://img.shields.io/badge/license-MIT-brightgreen)
 
 ## Features
 
-- **Excel-like Interface**: Edit markdown tables in a familiar spreadsheet-style interface
-- **Context Menu Integration**: Right-click on any markdown table to open the editor
-- **Real-time Updates**: Changes in the editor are reflected immediately in your markdown file
-- **Keyboard Navigation**: Use Tab/Shift+Tab to navigate between cells, Enter to move down
-- **Row/Column Management**: Add or delete rows and columns with ease
-- **Visual Feedback**: Hover actions and visual indicators for better user experience
+### 📊 Excel-like Table Editor
+- **Visual Editing**: Edit tables in a clean, spreadsheet-like interface
+- **Live Preview**: See your changes in real-time
+- **Smart Navigation**: Use Tab, Shift+Tab, and Enter to navigate between cells
+- **Focus Indicators**: Blue outline shows the currently selected cell
+
+### ✏️ Table Operations
+- **Create Tables**: Right-click anywhere in a markdown file to create a new table
+- **Edit Existing Tables**: Right-click on any table to open the visual editor
+- **Add/Remove Rows & Columns**: Easy table manipulation via buttons or context menu
+- **Undo/Redo Support**: Full history tracking with Ctrl+Z and Ctrl+Y
+
+### ⌨️ Keyboard Shortcuts
+- `Ctrl+S` or `Cmd+S`: Save changes
+- `Ctrl+Z` or `Cmd+Z`: Undo
+- `Ctrl+Y` or `Cmd+Y`: Redo
+- `Tab`: Navigate to next cell
+- `Shift+Tab`: Navigate to previous cell
+- `Enter`: Move down to the next row
+
+### 🎨 Professional UI
+- Clean, VS Code-themed interface
+- Compact toolbar with intuitive button layout
+- Status bar showing table dimensions and shortcuts
+- Responsive design that adapts to your theme
 
 ## Usage
 
-1. Open a markdown file (`.md`) in VS Code
-2. Place your cursor inside a markdown table
-3. Right-click and select "Edit Markdown Table" from the context menu
-4. The table editor will open in a side panel
-5. Edit cells directly by clicking on them
-6. Use the toolbar buttons or hover actions to add/remove rows and columns
-7. Click "Save Changes" to update the markdown file
+### Creating a New Table
+1. Open any Markdown file (`.md`)
+2. Right-click where you want to insert a table
+3. Select **"Markdown Table: Create"**
+4. A 2x2 table will be inserted and the editor will open
+5. Edit the content and click **Save**
 
-## Keyboard Shortcuts
+### Editing an Existing Table
+1. Open a Markdown file containing a table
+2. Right-click anywhere inside the table
+3. Select **"Markdown Table: Edit"**
+4. Make your changes in the visual editor
+5. Click **Save** to apply changes or **Cancel** to discard
 
-- `Tab`: Move to next cell
-- `Shift+Tab`: Move to previous cell
-- `Enter`: Move to cell below
+### Table Operations
+- **Add Row**: Click the "+ Add Row" button or right-click a cell
+- **Add Column**: Click the "+ Add Column" button or right-click a cell
+- **Delete Row/Column**: Right-click any cell and select delete options
+- **Undo/Redo**: Use the arrow buttons or keyboard shortcuts
+
+## Example
+
+Transform this:
+```markdown
+| Name | Age | City |
+| --- | --- | --- |
+| John Doe | 30 | New York |
+| Jane Smith | 25 | Los Angeles |
+```
+
+Into a visual table editor where you can:
+- Click any cell to edit
+- Add/remove rows and columns with buttons
+- Navigate with keyboard shortcuts
+- See live preview of your changes
 
 ## Requirements
 
@@ -33,17 +78,44 @@ A Visual Studio Code extension that provides an Excel-like editor for markdown t
 
 ## Installation
 
-1. Clone this repository
-2. Run `npm install` to install dependencies
-3. Run `npm run compile` to compile TypeScript
-4. Press `F5` to run the extension in a new VS Code window
+1. Open VS Code
+2. Go to Extensions (Ctrl+Shift+X)
+3. Search for "Markdown Table Editor"
+4. Click Install
 
-## Development
+## Extension Settings
 
-- `npm run compile`: Compile TypeScript files
-- `npm run watch`: Watch for changes and recompile
-- `npm run lint`: Run ESLint
+This extension works out of the box with no configuration required.
+
+## Known Issues
+
+- Tables must follow standard Markdown table format
+- Minimum table size is 1 column x 2 rows (header + data)
+
+## Release Notes
+
+### 1.0.0
+
+Initial release with:
+- Visual table editor
+- Create and edit tables
+- Add/delete rows and columns
+- Undo/redo support
+- Keyboard navigation
+- Professional UI design
+
+## Contributing
+
+Found a bug or have a feature request? Please create an issue on our [GitHub repository](https://github.com/yourusername/md-table-editor).
 
 ## License
 
-ISC
+This extension is licensed under the [MIT License](LICENSE).
+
+## Credits
+
+Icon by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) from [Flaticon](https://www.flaticon.com/)
+
+---
+
+**Enjoy editing Markdown tables the easy way!** 🎉

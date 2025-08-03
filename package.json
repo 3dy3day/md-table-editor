@@ -1,12 +1,28 @@
 {
   "name": "md-table-editor",
   "displayName": "Markdown Table Editor",
-  "description": "Edit markdown tables in an Excel-like editor",
-  "version": "0.0.1",
+  "description": "Edit markdown tables in a visual Excel-like interface with live preview, keyboard navigation, and undo/redo support",
+  "version": "1.0.0",
+  "publisher": "3dy3day",
   "engines": {
     "vscode": "^1.74.0"
   },
-  "categories": ["Other"],
+  "categories": ["Other", "Formatters", "Visualization"],
+  "keywords": ["markdown", "table", "editor", "excel", "spreadsheet", "visual"],
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/md-table-editor"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/md-table-editor/issues"
+  },
+  "homepage": "https://github.com/yourusername/md-table-editor#readme",
+  "license": "MIT",
   "activationEvents": [
     "onCommand:mdTableEditor.editTable",
     "onCommand:mdTableEditor.createTable"
