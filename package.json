@@ -1,6 +1,6 @@
 {
-  "name": "md-table-editor",
-  "displayName": "Markdown Table Editor",
+  "name": "visual-markdown-table-editor",
+  "displayName": "Visual Markdown Table Editor",
   "description": "Edit markdown tables in a visual Excel-like interface with live preview, keyboard navigation, and undo/redo support",
   "version": "1.0.0",
   "publisher": "3dy3day",
@@ -9,7 +9,7 @@
   },
   "categories": ["Other", "Formatters", "Visualization"],
   "keywords": ["markdown", "table", "editor", "excel", "spreadsheet", "visual"],
-  "icon": "icon.png",
+  "icon": "images/icon.png",
   "galleryBanner": {
     "color": "#1e1e1e",
     "theme": "dark"

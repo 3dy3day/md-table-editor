@@ -1,4 +1,4 @@
-# Markdown Table Editor
+# Visual Markdown Table Editor
 
 A powerful VS Code extension that brings Excel-like table editing capabilities to Markdown files. Edit your markdown tables in a visual, intuitive interface instead of wrestling with pipes and dashes.
 
@@ -86,7 +86,7 @@ Into a visual table editor where you can:
 
 1. Open VS Code
 2. Go to Extensions (Ctrl+Shift+X)
-3. Search for "Markdown Table Editor"
+3. Search for "Visual Markdown Table Editor"
 4. Click Install
 
 ## Extension Settings
